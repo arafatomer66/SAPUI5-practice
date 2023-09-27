@@ -1,11 +1,52 @@
 <mvc:View controllerName="sap.ui.demo.walkthrough.controller.App"
     xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc">
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    >
     <Button text="Say Hi" press=".onShowHello"/>
     <Button text="{i18n>showHelloButtonText}" press=".onShowHello"/>
-    <Input
-        value="{/recipient/name}"
-        description="Hello {/recipient/name}"
-        valueLiveUpdate="true"
-        width="60%"/>
+
+        <Shell
+            appWidthLimited="true"
+            backgroundColor=""
+            backgroundImage=""
+            backgroundOpacity="1"
+            backgroundRepeat="false"
+            headerRightText=""
+            homeIcon=""
+            logo=""
+            showLogout="true"
+            title=""
+            titleLevel="H1"
+        >
+        <App>
+            <pages>
+                <Page title="{i18n>homePageTitle}">
+                    <content>
+                        <Panel
+                            accessibleRole="Form"
+                            backgroundDesign="Translucent"
+                            expandAnimation="true"
+                            expandable="false"
+                            expanded="false"
+                            headerText="{i18n>helloPanelTitle}"
+                            height="auto"
+                            width="100%" >
+                            <content>
+                                <Input
+                                value="{/recipient/name}"
+                                description="Hello {/recipient/name}"
+                                valueLiveUpdate="true"
+                                width="60%"/>
+                            </content>
+                            <headerToolbar>
+                            </headerToolbar>
+                            <infoToolbar>
+                            </infoToolbar>
+                        </Panel>
+                    </content>
+                </Page>
+            </pages>
+        </App>
+        </Shell>
 </mvc:View>
