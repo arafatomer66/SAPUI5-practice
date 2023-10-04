@@ -7,6 +7,10 @@ sap.ui.define(
   (Controller, JSONModel, ResourceModel) => {
     "use strict";
 
-    return Controller.extend("sap.ui.demo.walkthrough.App", {});
+    return Controller.extend("sap.ui.demo.walkthrough.App", {
+      onOpenDialog: function () {
+        this.getOwnerComponent().openHelloDialog();
+    }
+    });
   }
 );
